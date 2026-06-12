@@ -1,0 +1,287 @@
+.course-card {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  padding: 32px 16px 0 16px;
+  box-sizing: border-box;
+  line-height: 150%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+
+  background-color: #fff;
+  box-shadow: 0 2px 20px rgb(0 0 0 / 10%);
+
+  &__school-logo {
+    max-height: 40px;
+    width: auto;
+    max-width: 100px;
+  }
+
+  &__title-rating-reviews-block {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  &__school-rating {
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &-icon {
+      margin-right: 6px;
+    }
+
+    &-value {
+      margin-right: 4px;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    &-reviews-count {
+      color: #B8B8B8;
+    }
+  }
+
+  &__reviews {
+    font-size: 14px;
+    line-height: 140%;
+
+    a {
+      color: #00BBF9;
+      text-decoration: none;
+    }
+  }
+
+  &__school-block {
+    margin-bottom: 16px;
+  }
+
+  &__prices-block {
+    margin-bottom: 24px;
+  }
+
+  &__price-without-discount {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 130%;
+
+    &_crossed-out {
+      font-size: 16px;
+      line-height: 140%;
+      color: #B8B8B8;
+      text-decoration: line-through;
+      font-weight: 500;
+    }
+  }
+
+  &__price-with-discount {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 130%;
+    margin-bottom: 8px;
+  }
+
+  &__price-credit {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__buttons-block {
+    margin-bottom: 24px;
+  }
+
+  &__button-course-site {
+    background-color: #9B5DE5;
+    border-radius: 100px;
+    outline: none;
+    border: none;
+    color: #fff;
+    padding: 11.5px 42.5px;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 120%;
+    cursor: pointer;
+
+    &-icon {
+      margin-left: 13.5px;
+      display: inline;
+    }
+  }
+
+  &__duration {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &-icon {
+      margin-right: 9.6px;
+    }
+  }
+
+  &__duration-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      background: url('/assets/images/duration.svg') no-repeat left center;
+      padding-left: 26px;
+    }
+  }
+
+  &__promocode {
+    margin-bottom: 16px;
+    transition: 0.3s ease-in-out;
+
+    &-title {
+      font-size: 14px;
+      line-height: 140%;
+      color: #B8B8B8;
+    }
+
+    &-value {
+      color: #9B5DE5;
+      font-weight: 800;
+    }
+  }
+
+  &__format-list {
+    list-style-type: none;
+    margin: 0 0 24px 0;
+    padding: 0;
+
+    &-item {
+      background: url('/assets/images/education-format.svg') no-repeat left center;
+      padding-left: 25px;
+    }
+  }
+
+  &__button-details-block {
+    padding: 16px 0;
+    text-align: right;
+  }
+
+  &__button-show-details {
+    color: #00BBF9;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    font-size: 16px;
+    padding: 0;
+    cursor: pointer;
+
+    &-icon {
+      margin-left: 8px;
+      transition: 0.25s ease-in-out;
+      display: inline;
+
+      &_showed {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+@media(min-width: 768px) {
+  .course-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr minmax(210px, 1fr);
+    grid-column-gap: 20px;
+    align-items: start;
+    margin-bottom: 32px;
+
+    &__title-rating-reviews-block {
+      margin-bottom: 24px;
+    }
+
+    &__school-block {
+      margin-bottom: 24px;
+    }
+
+    &__prices-block {
+      margin-bottom: 24px;
+    }
+
+    &__buttons-block {
+      margin-bottom: 24px;
+    }
+
+    &__duration {
+      grid-column: 1 / span 2;
+    }
+
+    &__format-list {
+      grid-column: 3 / span 2;
+    }
+
+    &__button-details-block {
+      grid-column: 1 / span 4;
+    }
+  }
+}
+
+@media(min-width: 1440px) {
+  .course-card {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr minmax(210px, 1fr);
+    padding: 40px 0;
+    box-shadow: none;
+    border-radius: 0;
+    border-top: 1px solid #E8E8E8;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    &:last-child {
+      border-bottom: 1px solid #E8E8E8;
+    }
+
+    &__title-rating-reviews-block {
+      grid-column: 1 / span 1;
+      margin-bottom: 0;
+    }
+
+    &__school-block {
+      grid-column: 2 / span 1;
+      margin-bottom: 0;
+    }
+
+    &__prices-block {
+      grid-column: 3 / span 1;
+      margin-bottom: 0;
+    }
+
+    &__duration {
+      grid-column: 4 / span 1;
+      grid-row-start: 1;
+      margin-bottom: 0;
+    }
+
+    &__promocode {
+      grid-column: 5 / span 1;
+      grid-row-start: 1;
+      margin-bottom: 0;
+    }
+
+    &__buttons-block {
+      grid-column: 6 / span 1;
+      margin-bottom: 0;
+    }
+
+    &__format-list {
+      grid-column: 5 / span 1;
+      grid-row-start: 1;
+      margin-bottom: 0;
+    }
+
+    &__button-details-block {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@let crumbs = breadcrumbs$ | async;
+@let crumbsLength = crumbs?.length;
+
+<div class="breadcrumbss">
+@if (crumbsLength) {
+  <div class="breadcrumbs">
+    @for (breadcrumb of crumbs; let index = $index; track breadcrumb.href) {
+      <span class="mx-2">
+        @if (typeof breadcrumb.href !== undefined) {
+          <a class="breadcrumbs__link" [href]="breadcrumb.href">
+            {{ breadcrumb.title }}
+          </a>
+        } @else {
+          {{ breadcrumb.title }}
+        }
+      </span>
+      @if (index + 1 < crumbsLength) {
+        <span class="breadcrumbs__separator"> / </span>
+      }
+    }
+  </div>
+}
+</div>

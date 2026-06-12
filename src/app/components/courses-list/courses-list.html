@@ -1,0 +1,53 @@
+@let coursesList = courses();
+@let coursesCnt = coursesCount();
+
+<div class="courses-page">
+  <div class="courses-page__header">
+    <h1 class="courses-page__title">Онлайн-курсы</h1>
+    <p class="courses-page__description">
+      Список всех онлайн-курсов с рейтингом, отзывами и детальным описанием курса
+      2021 года. Для удобства поиска курса используйте фильтры, сортировку, сравнение и поиск.
+      Мы обновляем информацию о всех курсах каждую неделю.
+    </p>
+  </div>
+
+  <div class="courses-page__content">
+
+    <app-courses-filters
+      (filtersChanged)="loadCourses($event)"
+      [filters]="filters"
+    />
+    <div class="courses-page__courses-list">
+      @if (coursesList.length > 0) {
+        <ul>
+          @for (course of coursesList; track course.id) {
+            <li>
+              <app-course-card
+                [course]="course"
+                [school]="getSchoolById(course.school.id)"
+              />
+            </li>
+          }
+        </ul>
+      } @else {
+        <p>По Вашему запросу не найдено ни одного курса. Попробуйте изменить условия поиска.</p>
+      }
+    </div>
+  </div>
+
+  @if (coursesList.length > 0) {
+    <div class="courses-page__footer">
+      <div class="courses-page__courses-count-info">
+        Показано {{ coursesList.length }} курсов из {{ coursesCnt }}
+      </div>
+      @if (coursesList.length < coursesCnt) {
+        <button
+          class="courses-page__button-show-more"
+          (click)="loadMoreCourses()"
+        >
+          Показать еще
+        </button>
+      }
+    </div>
+  }
+</div>

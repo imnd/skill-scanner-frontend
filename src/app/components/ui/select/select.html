@@ -1,0 +1,36 @@
+@if (items && items.length > 0) {
+<div class="select">
+  <div
+    class="select__field"
+    [class]="{ 'select__field_active': isActive }"
+    (click)="isActive = !isActive"
+  >
+      <span
+        class="select__field-title"
+        [class]="{ 'select__field-title_not-empty': !!value }"
+      >
+        {{ title }}
+      </span>
+    <svg
+      width="10" height="6" viewBox="0 0 10 6"
+      class="select__field-icon"
+      [class]="{ 'select__field-icon_active': isActive }"
+    >
+      <path d="M5 5.33325L0 0.333252H10L5 5.33325Z" />
+    </svg>
+  </div>
+
+  @if (isActive) {
+  <ul class="select__list">
+    @for (item of items; let index = $index; track item[itemValuePropName] + index) {
+      <li
+        class="select__list-item select__list-item_selectable"
+        (click)="value = item[itemValuePropName]; isActive = false"
+      >
+        {{ item[itemTitlePropName] }}
+      </li>
+    }
+  </ul>
+  }
+</div>
+}

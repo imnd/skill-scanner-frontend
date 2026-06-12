@@ -1,0 +1,39 @@
+<div class="edvisor-checkbox-group">
+  <div class="edvisor-checkbox-group__parent">
+    <app-checkbox
+      [(value)]="model"
+      [id]="id"
+      [text]="text"
+      (valueChange)="parentChangeState"
+      [class]="'edvisor-checkbox-group__parent-input'"
+    />
+
+    <svg
+      width="12"
+      height="8"
+      viewBox="0 0 12 8"
+      [class]="{
+        'edvisor-checkbox-group__parent-icon_active': isToggled,
+        'edvisor-checkbox-group__parent-icon': true,
+      }"
+      (click)="isToggled = !isToggled"
+    >
+      <path
+        d="M6.00011 4.97656L10.1251 0.851562L11.3034 2.0299L6.00011 7.33323L0.696777 2.0299L1.87511 0.851562L6.00011 4.97656Z" />
+    </svg>
+  </div>
+  @if (isToggled) {
+  <ul class="edvisor-checkbox-group__children-list">
+    @for (item of items; let itemIndex=$index; track itemIndex;) {
+    <li class="edvisor-checkbox-group__children-list-item">
+      <app-checkbox
+        [id]="item[itemValuePropName]"
+        [text]="item[itemTextPropName]"
+        [(value)]="model"
+        (valueChange)="model = $event"
+      />
+    </li>
+    }
+  </ul>
+  }
+</div>

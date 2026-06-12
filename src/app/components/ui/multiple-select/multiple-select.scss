@@ -1,0 +1,119 @@
+.edvisor-select {
+  font-family: Raleway, sans-serif;
+  position: relative;
+  box-sizing: border-box;
+
+  &__field {
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    height: 56px;
+    line-height: 24px;
+    padding: 16px 48px 16px 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    user-select: none;
+
+    &_active {
+      border-color: #9B5DE5;
+    }
+
+    &_with-selected-items {
+      padding: 8px 48px 8px 20px;
+
+      .edvisor-select__field-title {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  &__field-counter {
+    color: #333;
+  }
+
+  &__field-title {
+    color: #B8B8B8;
+    user-select: none;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__field-icon {
+    position: absolute;
+    right: 25px;
+    top: 26.3px;
+    transition: 0.3s ease-in-out;
+    fill: #B8B8B8;
+
+    &_active {
+      transform: rotate(180deg);
+      fill: #9B5DE5;
+    }
+  }
+
+  &__list-wrapper {
+    border: 1px solid #DECAF6;
+    border-radius: 5px;
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+
+  &__counter {
+    color: #757575;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  &__select-all-btn {
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 6px 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #757575;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 130%;
+  }
+
+  &__list-wrapper {
+    margin-top: 8px;
+    box-sizing: border-box;
+  }
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  &__list-item {
+    padding: 16px 20px;
+    transition: 0.2s ease-in-out;
+    user-select: none;
+
+    &_counter-block {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &_selectable {
+      &:hover {
+        background-color: #F4EEFC;
+      }
+    }
+  }
+}

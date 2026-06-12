@@ -1,0 +1,229 @@
+.courses-filters {
+  display: grid;
+  grid-template-columns: 48px 48px 1fr;
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+
+  &__table-header-title {
+    display: flex;
+    align-items: center;
+
+    &:after {
+      background: url('/assets/images/sort_icon.svg') no-repeat right center;
+      display: inline-block;
+      content: '';
+      height: 14.17px;
+      width: 16.67px;
+      margin-left: 10.5px;
+      transform: rotate(180deg);
+    }
+
+    &_sort-asc,
+    &_sort-desc {
+      &:after {
+        transform: rotate(180deg);
+        filter: invert(1);
+      }
+    }
+
+    &_sort-desc {
+      &:after {
+        transform: rotate(0);
+      }
+    }
+
+    &_no-sort {
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &__button-show-filters {
+    background: #FFFFFF;
+    border: 1px solid #9B5DE5;
+    box-sizing: border-box;
+    border-radius: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+
+    &-title {
+      display: none;
+    }
+  }
+
+  &__button-search {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 100px;
+    outline: none;
+  }
+
+  &__search-field {
+    grid-column: 1 / span 3;
+    grid-row-start: 2;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 40px;
+    padding-left: 48px;
+    font-size: 16px;
+    margin-top: 8px;
+    background: url('/assets/images/search.svg') no-repeat left 20px center;
+    outline: none;
+    display: none;
+
+    &_visible {
+      display: block;
+    }
+  }
+
+  &__modal {
+    display: grid;
+    grid-template-rows: max-content max-content max-content max-content max-content max-content 1fr;
+    box-sizing: border-box;
+    height: 100%;
+
+    &-counter-line {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      padding: 0 16px;
+
+      &-title {
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 140%;
+      }
+
+      &-reset {
+        font-size: 14px;
+        line-height: 140%;
+        color: #9B5DE5;
+        cursor: pointer;
+      }
+    }
+
+    &-button {
+      align-self: end;
+      justify-self: center;
+      margin: 20px 32px;
+      padding: 14.5px 29px;
+      color: #fff;
+      background-color: #9B5DE5;
+      border: none;
+      border-radius: 100px;
+      font-weight: 800;
+      line-height: 120%;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+  &__table-section,
+  &__table-header {
+    display: none;
+  }
+}
+
+@media(min-width: 768px) {
+  .courses-filters {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 18px;
+
+    &__button-show-filters {
+      grid-column: 2 / span 1;
+      grid-row-start: 1;
+      width: auto;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 120%;
+      color: #9B5DE5;
+      height: 48px;
+
+      &-icon {
+        margin-right: 8px;
+      }
+
+      &-title {
+        display: inline;
+      }
+    }
+
+    &__button-search {
+      display: none;
+    }
+
+    &__search-field {
+      display: block;
+      grid-column: 1 / 2;
+      grid-row-start: 1;
+      height: 48px;
+      margin-top: 0;
+    }
+  }
+}
+
+@media(min-width: 1440px) {
+  .courses-filters {
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 16px;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    &__search-field {
+      grid-column: 1 / span 5;
+      height: 56px;
+      margin-bottom: 16px;
+
+      &::placeholder {
+        color: #B8B8B8;
+      }
+    }
+
+    &__button-show-filters {
+      display: none;
+    }
+
+    &__sort {
+      display: none;
+    }
+
+    &__table-section {
+      height: 56px;
+      grid-column: 1 / span 5;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-column-gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    &__table-header {
+      display: grid;
+      grid-column: 1 / span 5;
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-gap: 16px;
+
+      &-title {
+        padding: 20px 0;
+        font-weight: 800;
+        cursor: pointer;
+      }
+    }
+  }
+}

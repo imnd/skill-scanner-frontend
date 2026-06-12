@@ -1,0 +1,33 @@
+footer {
+  padding: 23px 0;
+  color: #ffffff;
+  background: #333333;
+  margin-top: 80px;
+
+  & .container {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+
+    & .info {
+      & .ogrn {
+        margin-bottom: 12px;
+      }
+
+      & .mail {
+        color: #ffffff;
+      }
+    }
+
+    & .links {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+
+      & a {
+        color: #ffffff;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.edvisor-checkbox-group {
+  &__children-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    &-item {
+      padding-left: 32px;
+      margin-top: 24px;
+    }
+  }
+
+  &__parent {
+    display: flex;
+    align-items: center;
+
+    &-icon {
+      margin-left: auto;
+      fill: #333;
+      cursor: pointer;
+      transition: 0.25s ease-in-out;
+
+      &_active {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

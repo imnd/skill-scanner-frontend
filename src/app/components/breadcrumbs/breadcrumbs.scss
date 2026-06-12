@@ -1,0 +1,18 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-left: 70px;
+
+  &__separator, &__link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #9b5de5;
+  }
+
+  &__link {
+    margin: 0;
+  }
+}

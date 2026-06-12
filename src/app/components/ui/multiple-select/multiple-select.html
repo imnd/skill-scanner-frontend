@@ -1,0 +1,67 @@
+@if (items && items.length > 0) {
+  <div class="edvisor-select">
+    <div
+      class="edvisor-select__field"
+      [class]="{
+        'edvisor-select__field_with-selected-items': !isActive && value.length > 0,
+        'edvisor-select__field_active': isActive,
+      }"
+      (click)="isActive = !isActive"
+    >
+      <span class="edvisor-select__field-title">{{ selectTitle }}</span>
+      @if (!isActive && value.length > 0) {
+        <div class="edvisor-select__field-counter">Выбрано: {{ value.length }}</div>
+      }
+
+      <svg
+        width="10" height="6" viewBox="0 0 10 6"
+        class="edvisor-select__field-icon"
+        [class]="{ 'edvisor-select__field-icon_active': isActive }"
+      >
+        <path d="M5 5.33325L0 0.333252H10L5 5.33325Z"/>
+      </svg>
+    </div>
+
+    @if (isActive) {
+      <div class="edvisor-select__list-wrapper">
+        <div class="edvisor-select__list-item edvisor-select__list-item_counter-block">
+          <span class="edvisor-select__counter">Выбрано: {{ value.length }}</span>
+          <button
+            class="edvisor-select__select-all-btn"
+            (click)="selectAllOrClear()"
+          >
+            <svg width="12" height="9" viewBox="0 0 12 9">
+              <path
+                d="M4.66649 7.11475L10.7945 0.986084L11.7378 1.92875L4.66649 9.00008L0.423828 4.75742L1.36649 3.81475L4.66649 7.11475Z" />
+            </svg>
+
+            {{ doesModelIncludeValues ? 'очистить' : 'все' }}
+          </button>
+        </div>
+
+        <ul class="edvisor-select__list">
+          @for (item of items; track item[itemValuePropName]) {
+            <li class="edvisor-select__list-item edvisor-select__list-item_selectable">
+              @if (withChildren) {
+                <app-checkbox-group
+                  [(value)]="model"
+                  [id]="item[itemValuePropName]"
+                  [text]="item[itemTitlePropName]"
+                  [items]="item[childrenPropName]"
+                  [itemValuePropName]="childValuePropName"
+                  [itemTextPropName]="childTextPropName"
+                />
+              } @else {
+                <app-checkbox
+                  [(value)]="model"
+                  [id]="item[itemValuePropName]"
+                  [text]="item[itemTitlePropName]"
+                />
+              }
+            </li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+}

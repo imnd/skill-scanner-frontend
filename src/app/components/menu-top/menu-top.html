@@ -1,0 +1,17 @@
+<div class="menu">
+  <div
+    [class]="'menu__burger d-flex d-md-none' + (isOpen ? ' menu__burger_open' : '')"
+    (click)="isOpen = !isOpen"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul [class]="'menu__list' + (isOpen ? ' menu__list_open' : '')">
+    @for (item of list; track item.name) {
+    <li [class]="isOpen ? 'menu__list-item menu__list_open-item' : 'menu__list-item'">
+      <a [routerLink]="item.route">{{ item.name }}</a>
+    </li>
+    }
+  </ul>
+</div>

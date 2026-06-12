@@ -1,0 +1,52 @@
+<div class="container front-page">
+  <div>
+    <div class="front-header">
+      <h1>Мы анализируем весь рынок онлайн-образования, чтобы подсказать самое <span>лучшее</span></h1>
+      <h3>Мы собрали все онлайн-курсы по digital и IT профессиям. Читайте отзывы о школах, сравнивайте и
+        выбирайте то, что подходит именно вам!</h3>
+    </div>
+    <div class="front-category">
+      @for (category of topCategories(); let index = $index; track category.id) {
+      <div [class]="'front-category__item front-category__item-color-' + (index + 1)">
+        <a [href]="`/courses/${category.slug}/`">
+          <span class="sub-title">Топ {{ limit }} курсов</span>
+          <span class="title">{{ category.title }}</span>
+          <span class="icon">
+            <img [src]="category.icon" />
+          </span>
+        </a>
+      </div>
+      }
+    </div>
+    <div class="edvlisting">
+      <app-courses-list [path]="'/'" />
+    </div>
+  </div>
+  <app-sales-list />
+  <div class="review">
+    <div class="container">
+      <h2>Новые отзывы о школах</h2>
+      <app-reviews-list />
+    </div>
+  </div>
+  <div class="block-seo">
+    <div class="container">
+      <h2>О проекте</h2>
+      <p>
+        Среди большого выбора программ обучения по digital и IT профессиям от многочисленных онлайн-школ
+        стало трудно ориентироваться. Курсы различаются по продолжительности, типу и стоимости оплаты,
+        программе курса и качеству материала.
+      </p>
+      <p>
+        Мы создали сайт edvisor.ru для удобного сравнения онлайн-курсов между собой.
+        Читайте отзывы о школах от реальных студентов, следите за акциями, сравнивайте и выбирайте
+        онлайн-курсы, которые подходят именно вам!
+      </p>
+      <p>
+        Все программы, которые Вы пометите как "Интересные" будут доступны в личном кабинете,
+        во вкладке "Избранное". Это позволит Вам следить за появлением скидок на онлайн-курсы
+        только по интересующим вас программам обучения.
+      </p>
+    </div>
+  </div>
+</div>

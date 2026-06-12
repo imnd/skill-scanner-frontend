@@ -1,0 +1,36 @@
+<div class="edvisor-selector">
+  <div class="edvisor-selector__title-counter-block" (click)="isItemsShowed = true">
+    <span class="edvisor-selector__title">{{ title }}</span>
+    <span class="edvisor-selector__counter">Выбрано: {{ selectedItemsCount }}</span>
+  </div>
+
+  <app-modal
+    [(value)]="isItemsShowed"
+    [zIndex]="10001"
+    [withBackIcon]="true"
+    [title]="title"
+  >
+    <ul class="edvisor-selector__list">
+      @for (item of items; track item[itemValuePropName]) {
+      <li class="edvisor-selector__item">
+        @if (modalComponent === 'CheckboxGroup') {
+          <app-checkbox-group
+            [id]="item[itemValuePropName]"
+            [text]="item[itemTextPropName]"
+            [(value)]="model"
+            [items]="withChildren ? item[childrenPropName] : null"
+            [itemValuePropName]="childValuePropName"
+            [itemTextPropName]="childTextPropName"
+          />
+        } @else {
+          <app-checkbox
+            [id]="item[itemValuePropName]"
+            [text]="item[itemTextPropName]"
+            [(value)]="model"
+          />
+        }
+      </li>
+      }
+    </ul>
+  </app-modal>
+</div>

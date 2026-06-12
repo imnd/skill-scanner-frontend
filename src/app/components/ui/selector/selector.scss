@@ -1,0 +1,50 @@
+.edvisor-selector {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  font-family: Raleway, sans-serif;
+  position: relative;
+
+  &__title-counter-block {
+    padding: 16px 48px 16px 16px;
+    background: url('/assets/images/arr-title.svg') no-repeat right 10px center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+
+    &:hover {
+      background-color: #F4EEFC;
+    }
+  }
+
+  &__title {
+    color: #000;
+  }
+
+  &__counter {
+    align-content: end;
+    justify-self: end;
+    color: #B8B8B8;
+  }
+
+  &__modal {
+    color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: yellow;
+    width: 100%;
+    height: 99999px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__item {
+    padding: 16px 32px;
+  }
+}

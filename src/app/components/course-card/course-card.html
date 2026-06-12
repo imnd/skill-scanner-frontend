@@ -1,0 +1,114 @@
+<div class="course-card">
+  <!--  Название, рейтинг, отзывы  -->
+  <div class="course-card__title-rating-reviews-block">
+    <div class="course-card__title">{{ course?.title }}</div>
+  </div>
+
+  <div class="course-card__school-block">
+    @if (school) {
+      <img
+        [src]="cdnUrl + school.logo"
+        class="course-card__school-logo"
+      />
+    }
+
+    <div class="course-card__school-rating">
+      <svg width="16" height="16" viewBox="0 0 16 16" class="course-card__rating-icon">
+        <path
+          d="M8.0002 12.6666L3.10186 15.6583L4.43353 10.0749L0.0751953 6.34159L5.79603 5.88325L8.0002 0.583252L10.2044 5.88325L15.926 6.34159L11.5669 10.0749L12.8985 15.6583L8.0002 12.6666Z"
+          fill="#FEE440" />
+      </svg>
+      <span class="course-card__school-rating-value">{{
+          school ? school.averageRating : null
+        }}</span>
+      <span class="course-card__school-rating-reviews-count">{{
+          school ? `(${school.reviewsCount})` : null
+        }}</span>
+    </div>
+
+    <div class="course-card__reviews">
+      <a [href]="school ? `/schools/${school.slug}/` : '#'">
+        Отзывы о школе {{ school ? `(${school.reviewsCount})` : null }}
+      </a>
+    </div>
+  </div>
+
+  <div class="course-card__prices-block">
+    @if (priceWithoutDiscount()) {
+      <div
+        class="course-card__price-without-discount"
+        [class]="{ 'course-card__price-without-discount_crossed-out' : course?.priceWithDiscount !== null }"
+      >
+        {{ priceWithoutDiscount() }} ₽
+      </div>
+    }
+
+    @if (course?.priceWithDiscount) {
+      <div class="course-card__price-with-discount">
+        {{ course?.priceWithDiscount }} ₽
+      </div>
+    }
+
+    @if (creditPriceWithoutDiscount()) {
+      <div class="course-card__price-credit">
+        {{ creditPriceWithoutDiscount() }} ₽/месяц
+      </div>
+    }
+  </div>
+
+  <div class="course-card__buttons-block">
+    <a [href]="`/goto?sg=2&obj=${course?.id}`" target="_blank">
+      <button class="course-card__button-course-site">
+        На сайт курса
+
+        <svg width="7" height="10" viewBox="0 0 7 10" class="course-card__button-course-site-icon">
+          <path
+            d="M4.28145 4.99999L0.981445 1.69999L1.92411 0.757324L6.16678 4.99999L1.92411 9.24266L0.981445 8.29999L4.28145 4.99999Z"
+            fill="white" />
+        </svg>
+      </button>
+    </a>
+  </div>
+
+  @if (isDetailsShowed) {
+    <div class="course-card__duration">
+      <ul class="course-card__duration-list">
+        @for (duration of (course?.durations || []); let index = $index; track duration.slug + course?.id) {
+          <li>
+            {{ duration.title }}
+          </li>
+        }
+      </ul>
+    </div>
+  }
+
+  @if (isDetailsShowed) {
+  <ul class="course-card__format-list">
+    @for (educationFormat of (course?.educationFormats || []); let index = $index; track index.toString() + educationFormat.id) {
+      <li class="course-card__format-list-item">
+        {{ educationFormat.title }}
+      </li>
+    }
+  </ul>
+  }
+
+  <div class="course-card__button-details-block">
+    <button
+      class="course-card__button-show-details"
+      (click)="isDetailsShowed = !isDetailsShowed"
+    >
+      {{ isDetailsShowed ? 'Скрыть подробности' : 'Подробнее' }}
+      <svg
+        width="12"
+        height="8"
+        viewBox="0 0 12 8"
+        class="course-card__button-show-details-icon"
+        [class]="{ 'course-card__button-show-details-icon_showed': isDetailsShowed }"
+      >
+        <path
+          d="M5.99962 4.97656L10.1246 0.851562L11.303 2.0299L5.99962 7.33323L0.696289 2.0299L1.87462 0.851562L5.99962 4.97656Z"
+          fill="#00BBF9" />
+      </svg>
+    </button>
+  </div>
+</div>
