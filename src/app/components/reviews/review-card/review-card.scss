@@ -1,0 +1,112 @@
+.reviews-slider-item {
+  padding: 16px;
+  color: #333;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 18px;
+  }
+
+  &__avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+    margin-right: 16px;
+  }
+
+  &__rating {
+    display: flex;
+  }
+
+  &__username {
+    font-weight: 800;
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 140%;
+    color: #B8B8B8;
+  }
+
+  &__courseName-rating-schoolLogo-section {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__courseName-rating-block {
+    margin-right: 22px;
+  }
+
+  &__courseName {
+    font-weight: 800;
+    margin-bottom: 9px;
+  }
+
+  &__rating-icon {
+    margin-right: 4.15px;
+    width: 16px;
+    height: 16px;
+    fill: #FEE440;
+
+    &_negative {
+      fill: #B8B8B8;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__schoolLogo {
+    height: 24px;
+    max-width: 60px;
+  }
+
+  &__body {
+    font-size: 14px;
+    line-height: 140%;
+    margin-bottom: 20px;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    background-color: #fff;
+    padding: 0;
+  }
+
+  &__button-show-full {
+    margin-left: auto;
+    padding-right: 4.7px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #9B5DE5;
+    font-size: 14px;
+    line-height: 140%;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+
+    &-icon {
+      margin-left: 12.7px;
+      transition: 0.25s ease-in-out;
+
+      &_active {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

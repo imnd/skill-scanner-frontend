@@ -33,7 +33,7 @@ export class CheckboxGroup implements OnInit {
     return this.value.includes(this.id)
   }
 
-  parentChangeState (newModelValue: Id[]) {
+  parentChangeState (newModelValue: unknown[]) {
     this.isToggled = newModelValue.includes(this.id)
 
     const allValues = [...this.items.map(item => item[this.itemValuePropName]), this.id]

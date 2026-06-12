@@ -11,7 +11,7 @@
     align-items: center;
 
     &:after {
-      background: url('/assets/images/sort_icon.svg') no-repeat right center;
+      background: url('/src/assets/images/sort_icon.svg') no-repeat right center;
       display: inline-block;
       content: '';
       height: 14.17px;
@@ -83,7 +83,7 @@
     padding-left: 48px;
     font-size: 16px;
     margin-top: 8px;
-    background: url('/assets/images/search.svg') no-repeat left 20px center;
+    background: url('/src/assets/images/search.svg') no-repeat left 20px center;
     outline: none;
     display: none;
 

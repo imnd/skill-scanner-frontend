@@ -1,1 +1,2114 @@
-<p>sales-list works!</p>
+<div class="stock">
+  <div class="container">
+    <h2>Акции школ</h2>
+    <div class="scroll-nav">
+      <ul class="nav nav-tabs">
+        <li>
+          <a class="active show" href="#tab-1" data-toggle="tab">Все</a>
+        </li>
+        @for (sale of sales(); let index = $index; track sale.id) {
+          <li>
+            <a [href]="`#tab-${index + 2}`" data-toggle="tab">{{ sale.title }}</a>
+          </li>
+        }
+      </ul>
+    </div>
+    <div class="tab-content">
+      <div class="tab-pane active show" id="tab-1" role="tabpanel">
+        <div class="slider-tab slick-initialized slick-slider slick-dotted">
+          <button type="button" class="slick-prev slick-arrow" style="">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.90872 8L12 12.978L10.5456 14.4L4 8L10.5456 1.6L12 3.02199L6.90872 8Z"
+                    fill="#B8B8B8" />
+            </svg>
+          </button>
+          <div class="slick-list draggable">
+            <div class="slick-track" style="opacity: 1; width: 0; transform: translate3d(0px, 0px, 0px);">
+              <div class="slick-slide slick-cloned" data-slick-index="1" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" /></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned"
+                   data-slick-index="2" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt="Big Data Engineer"></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="3" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide07">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <button type="button" class="slick-next slick-arrow" style="">
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.09128 7L0 2.02199L1.45436 0.599996L8 7L1.45436 13.4L0 11.978L5.09128 7Z"
+                    fill="#B8B8B8" />
+            </svg>
+          </button>
+          <ul class="slick-dots" style="" role="tablist">
+            <li class="slick-active" role="presentation">
+              <button type="button" role="tab" id="slick-slide-control00" aria-controls="slick-slide00"
+                      aria-label="1 of 2" tabindex="0" aria-selected="true">1
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control01" aria-controls="slick-slide01"
+                      aria-label="2 of 2" tabindex="-1">2
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control02" aria-controls="slick-slide02"
+                      aria-label="3 of 2" tabindex="-1">3
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control03" aria-controls="slick-slide03"
+                      aria-label="4 of 2" tabindex="-1">4
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control04" aria-controls="slick-slide04"
+                      aria-label="5 of 2" tabindex="-1">5
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control05" aria-controls="slick-slide05"
+                      aria-label="6 of 2" tabindex="-1">6
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control06" aria-controls="slick-slide06"
+                      aria-label="7 of 2" tabindex="-1">7
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control07" aria-controls="slick-slide07"
+                      aria-label="8 of 2" tabindex="-1">8
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+      <div class="tab-pane" id="tab-2" role="tabpanel">
+        <div class="slider-tab slick-initialized slick-slider">
+          <div class="slick-list draggable">
+            <div
+              class="slick-track"
+              style="opacity: 1; width: 0; transform: translate3d(0px, 0px, 0px);"
+            >
+              <div
+                class="slick-slide slick-current slick-active"
+                data-slick-index="0"
+                aria-hidden="false"
+                style="width: 0"
+              >
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="slick-slide slick-active"
+                data-slick-index="1"
+                aria-hidden="false"
+                style="width: 0"
+              >
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-1.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="slick-slide slick-active"
+                data-slick-index="2"
+                aria-hidden="false"
+                style="width: 0"
+              >
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-3" role="tabpanel">
+        <div class="slider-tab slick-initialized slick-slider slick-dotted">
+          <button type="button" class="slick-prev slick-arrow" style="">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.90872 8L12 12.978L10.5456 14.4L4 8L10.5456 1.6L12 3.02199L6.90872 8Z"
+                    fill="#B8B8B8"/>
+            </svg>
+          </button>
+          <div class="slick-list draggable">
+            <div class="slick-track" style="opacity: 1; width: 0; transform: translate3d(0px, 0px, 0px);">
+              <div class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false"
+                   style="width: 0" role="tabpanel" id="slick-slide20">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 0"
+                   role="tabpanel" id="slick-slide21">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-1.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 0"
+                   role="tabpanel" id="slick-slide22">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 0"
+                   role="tabpanel" id="slick-slide23">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="4" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide24">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="5" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide25">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="6" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide26">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="7" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide27">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-1.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="10" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="11" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="12" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="13" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="14" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="15" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="slick-next slick-arrow" style="">
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.09128 7L0 2.02199L1.45436 0.599996L8 7L1.45436 13.4L0 11.978L5.09128 7Z"
+                    fill="#B8B8B8" />
+            </svg>
+          </button>
+          <ul class="slick-dots" style="" role="tablist">
+            <li class="slick-active" role="presentation">
+              <button type="button" role="tab" id="slick-slide-control20" aria-controls="slick-slide20"
+                      aria-label="1 of 2" tabindex="0" aria-selected="true">1
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control21" aria-controls="slick-slide21"
+                      aria-label="2 of 2" tabindex="-1">2
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control22" aria-controls="slick-slide22"
+                      aria-label="3 of 2" tabindex="-1">3
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control23" aria-controls="slick-slide23"
+                      aria-label="4 of 2" tabindex="-1">4
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control24" aria-controls="slick-slide24"
+                      aria-label="5 of 2" tabindex="-1">5
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control25" aria-controls="slick-slide25"
+                      aria-label="6 of 2" tabindex="-1">6
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control26" aria-controls="slick-slide26"
+                      aria-label="7 of 2" tabindex="-1">7
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control27" aria-controls="slick-slide27"
+                      aria-label="8 of 2" tabindex="-1">8
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-4" role="tabpanel">
+        <div class="slider-tab slick-initialized slick-slider slick-dotted">
+          <button type="button" class="slick-prev slick-arrow" style="">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.90872 8L12 12.978L10.5456 14.4L4 8L10.5456 1.6L12 3.02199L6.90872 8Z"
+                    fill="#B8B8B8" />
+            </svg>
+          </button>
+          <div class="slick-list draggable">
+            <div class="slick-track" style="opacity: 1; width: 0; transform: translate3d(0px, 0px, 0px);">
+              <div class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false"
+                   style="width: 0" role="tabpanel" id="slick-slide30">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 0"
+                   role="tabpanel" id="slick-slide31">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-1.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 0"
+                   role="tabpanel" id="slick-slide32">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 0"
+                   role="tabpanel" id="slick-slide33">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="4" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide34">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="5" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide35">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="6" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide36">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="7" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide37">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-1.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="10" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="11" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="12" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="13" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="14" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="15" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="slick-next slick-arrow" style="">
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.09128 7L0 2.02199L1.45436 0.599996L8 7L1.45436 13.4L0 11.978L5.09128 7Z"
+                    fill="#B8B8B8" />
+            </svg>
+          </button>
+          <ul class="slick-dots" style="" role="tablist">
+            <li class="slick-active" role="presentation">
+              <button type="button" role="tab" id="slick-slide-control30" aria-controls="slick-slide30"
+                      aria-label="1 of 2" tabindex="0" aria-selected="true">1
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control31" aria-controls="slick-slide31"
+                      aria-label="2 of 2" tabindex="-1">2
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control32" aria-controls="slick-slide32"
+                      aria-label="3 of 2" tabindex="-1">3
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control33" aria-controls="slick-slide33"
+                      aria-label="4 of 2" tabindex="-1">4
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control34" aria-controls="slick-slide34"
+                      aria-label="5 of 2" tabindex="-1">5
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control35" aria-controls="slick-slide35"
+                      aria-label="6 of 2" tabindex="-1">6
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control36" aria-controls="slick-slide36"
+                      aria-label="7 of 2" tabindex="-1">7
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control37" aria-controls="slick-slide37"
+                      aria-label="8 of 2" tabindex="-1">8
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-5" role="tabpanel">
+        <div class="slider-tab slick-initialized slick-slider slick-dotted">
+          <button type="button" class="slick-prev slick-arrow" style="">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.90872 8L12 12.978L10.5456 14.4L4 8L10.5456 1.6L12 3.02199L6.90872 8Z"
+                    fill="#B8B8B8" />
+            </svg>
+          </button>
+          <div class="slick-list draggable">
+            <div class="slick-track" style="opacity: 1; width: 0; transform: translate3d(0px, 0px, 0px);">
+              <div class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false"
+                   style="width: 0" role="tabpanel" id="slick-slide40">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 0"
+                   role="tabpanel" id="slick-slide41">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-1.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 0"
+                   role="tabpanel" id="slick-slide42">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 0"
+                   role="tabpanel" id="slick-slide43">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="4" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide44">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="5" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide45">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="6" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide46">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="7" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide47">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-1.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="10" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="11" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="12" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="13" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="14" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="15" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="slick-next slick-arrow" style="">
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.09128 7L0 2.02199L1.45436 0.599996L8 7L1.45436 13.4L0 11.978L5.09128 7Z"
+                    fill="#B8B8B8" />
+            </svg>
+          </button>
+          <ul class="slick-dots" style="" role="tablist">
+            <li class="slick-active" role="presentation">
+              <button type="button" role="tab" id="slick-slide-control40" aria-controls="slick-slide40"
+                      aria-label="1 of 2" tabindex="0" aria-selected="true">1
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control41" aria-controls="slick-slide41"
+                      aria-label="2 of 2" tabindex="-1">2
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control42" aria-controls="slick-slide42"
+                      aria-label="3 of 2" tabindex="-1">3
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control43" aria-controls="slick-slide43"
+                      aria-label="4 of 2" tabindex="-1">4
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control44" aria-controls="slick-slide44"
+                      aria-label="5 of 2" tabindex="-1">5
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control45" aria-controls="slick-slide45"
+                      aria-label="6 of 2" tabindex="-1">6
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control46" aria-controls="slick-slide46"
+                      aria-label="7 of 2" tabindex="-1">7
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control47" aria-controls="slick-slide47"
+                      aria-label="8 of 2" tabindex="-1">8
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-6" role="tabpanel">
+        <div class="slider-tab slick-initialized slick-slider slick-dotted">
+          <button type="button" class="slick-prev slick-arrow" style="">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.90872 8L12 12.978L10.5456 14.4L4 8L10.5456 1.6L12 3.02199L6.90872 8Z"
+                    fill="#B8B8B8" />
+            </svg>
+          </button>
+          <div class="slick-list draggable">
+            <div class="slick-track" style="opacity: 1; width: 0; transform: translate3d(0px, 0px, 0px);">
+              <div class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false"
+                   style="width: 0" role="tabpanel" id="slick-slide50">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 0"
+                   role="tabpanel" id="slick-slide51">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-1.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 0"
+                   role="tabpanel" id="slick-slide52">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 0"
+                   role="tabpanel" id="slick-slide53">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="4" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide54">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="5" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide55">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="6" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide56">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="7" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide57">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-1.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="10" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="11" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="12" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="13" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="14" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="15" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="slick-next slick-arrow" style="">
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.09128 7L0 2.02199L1.45436 0.599996L8 7L1.45436 13.4L0 11.978L5.09128 7Z"
+                    fill="#B8B8B8" />
+            </svg>
+          </button>
+          <ul class="slick-dots" style="" role="tablist">
+            <li class="slick-active" role="presentation">
+              <button type="button" role="tab" id="slick-slide-control50" aria-controls="slick-slide50"
+                      aria-label="1 of 2" tabindex="0" aria-selected="true">1
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control51" aria-controls="slick-slide51"
+                      aria-label="2 of 2" tabindex="-1">2
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control52" aria-controls="slick-slide52"
+                      aria-label="3 of 2" tabindex="-1">3
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control53" aria-controls="slick-slide53"
+                      aria-label="4 of 2" tabindex="-1">4
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control54" aria-controls="slick-slide54"
+                      aria-label="5 of 2" tabindex="-1">5
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control55" aria-controls="slick-slide55"
+                      aria-label="6 of 2" tabindex="-1">6
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control56" aria-controls="slick-slide56"
+                      aria-label="7 of 2" tabindex="-1">7
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control57" aria-controls="slick-slide57"
+                      aria-label="8 of 2" tabindex="-1">8
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-7" role="tabpanel">
+        <div class="slider-tab slick-initialized slick-slider slick-dotted">
+          <button type="button" class="slick-prev slick-arrow" style="">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.90872 8L12 12.978L10.5456 14.4L4 8L10.5456 1.6L12 3.02199L6.90872 8Z"
+                    fill="#B8B8B8" />
+            </svg>
+          </button>
+          <div class="slick-list draggable">
+            <div class="slick-track" style="opacity: 1; width: 0; transform: translate3d(0px, 0px, 0px);">
+              <div class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false"
+                   style="width: 0" role="tabpanel" id="slick-slide60">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 0"
+                   role="tabpanel" id="slick-slide61">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-1.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 0"
+                   role="tabpanel" id="slick-slide62">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 0"
+                   role="tabpanel" id="slick-slide63">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="4" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide64">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="5" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide65">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="6" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide66">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide" data-slick-index="7" aria-hidden="true" style="width: 0" tabindex="-1"
+                   role="tabpanel" id="slick-slide67">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-1.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="10" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="11" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="12" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="13" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="14" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slick-slide slick-cloned" data-slick-index="15" aria-hidden="true" style="width: 0"
+                   tabindex="-1">
+                <div>
+                  <div class="item" style="width: 100%; display: inline-block;">
+                    <div class="top">
+                      <div class="img"><img src="/assets/images/logo-2.svg" alt=""></div>
+                      <div class="sale">-40%</div>
+                    </div>
+                    <div class="title">Big Data Engineer</div>
+                    <div class="price">
+                      <div class="old">165 000 ₽/курс</div>
+                      <div class="new">99 000 ₽/курс</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="slick-next slick-arrow" style="">
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.09128 7L0 2.02199L1.45436 0.599996L8 7L1.45436 13.4L0 11.978L5.09128 7Z"
+                    fill="#B8B8B8" />
+            </svg>
+          </button>
+          <ul class="slick-dots" style="" role="tablist">
+            <li class="slick-active" role="presentation">
+              <button type="button" role="tab" id="slick-slide-control60" aria-controls="slick-slide60"
+                      aria-label="1 of 2" tabindex="0" aria-selected="true">1
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control61" aria-controls="slick-slide61"
+                      aria-label="2 of 2" tabindex="-1">2
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control62" aria-controls="slick-slide62"
+                      aria-label="3 of 2" tabindex="-1">3
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control63" aria-controls="slick-slide63"
+                      aria-label="4 of 2" tabindex="-1">4
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control64" aria-controls="slick-slide64"
+                      aria-label="5 of 2" tabindex="-1">5
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control65" aria-controls="slick-slide65"
+                      aria-label="6 of 2" tabindex="-1">6
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control66" aria-controls="slick-slide66"
+                      aria-label="7 of 2" tabindex="-1">7
+              </button>
+            </li>
+            <li role="presentation">
+              <button type="button" role="tab" id="slick-slide-control67" aria-controls="slick-slide67"
+                      aria-label="8 of 2" tabindex="-1">8
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="#" class="btn-outline">Смотреть все акции</a>
+    </div>
+  </div>
+</div>

@@ -5,12 +5,12 @@ export interface School {
   slug: string;
   title: string;
   logo?: string;
-  description?: string;
-  shortDescription?: string;
-  categories?: SchoolsCategory[];
   reviewsCount?: number;
   averageRating?: string | number;
   link?: string;
+  description?: string;
+  shortDescription?: string;
+  categories?: SchoolsCategory[];
 }
 
 

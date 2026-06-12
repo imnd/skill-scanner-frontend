@@ -46,7 +46,7 @@ export class Selector implements OnInit {
   }
 
   private el = inject(ElementRef);
-  ngOnInit () {
+  ngOnInit() {
     this.parentHeight = this.el.nativeElement.parentElement.offsetHeight;
   }
 }

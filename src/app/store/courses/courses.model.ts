@@ -1,6 +1,7 @@
 import { Duration } from '../duration/duration.model';
 import { PaymentType } from '../payment-types/payment-types.model';
 import { EducationFormat } from '../education-formats/education-formats.model';
+import { School } from '../schools/schools.model';
 
 export interface Course {
   id: string | number;
@@ -15,14 +16,6 @@ export interface Course {
   durations?: Duration[];
   paymentTypes?: PaymentType[];
   educationFormats?: EducationFormat[];
-  school: {
-    id: string | number;
-    title?: string;
-    logo?: string;
-    slug?: string;
-    reviewsCount?: number;
-    averageRating?: string | number;
-    link?: string;
-  };
+  school: Omit<School, 'description' | 'shortDescription' | 'categories'>
 }
 

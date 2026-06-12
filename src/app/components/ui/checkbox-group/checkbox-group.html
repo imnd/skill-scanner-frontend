@@ -4,7 +4,7 @@
       [(value)]="model"
       [id]="id"
       [text]="text"
-      (valueChange)="parentChangeState"
+      (valueChange)="parentChangeState([$event])"
       [class]="'edvisor-checkbox-group__parent-input'"
     />
 

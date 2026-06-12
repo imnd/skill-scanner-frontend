@@ -1,0 +1,68 @@
+<div class="reviews-slider-item">
+  <header class="reviews-slider-item__header">
+    @if (review.user.avatar) {
+      <img
+        [src]="review.user.avatar"
+        class="reviews-slider-item__avatar"
+        alt="user avatar"
+      />
+    }
+    <div class="reviews-slider-item__username-date-block">
+      <div class="reviews-slider-item__username">{{ userFullName }}</div>
+      <div class="reviews-slider-item__date">{{ reviewDate }}</div>
+    </div>
+  </header>
+
+  <section class="reviews-slider-item__courseName-rating-schoolLogo-section">
+    <div class="reviews-slider-item__courseName-rating-block">
+      <div class="reviews-slider-item__courseName">Школа «{{ review.school?.title }}»</div>
+      <div class="reviews-slider-item__rating">
+
+        @for (positiveMark of positiveReviewRating; track review.id + positiveMark.toString()) {
+          <svg class="reviews-slider-item__rating-icon">
+            <path
+              d="M8.0002 12.1666L3.10186 15.1583L4.43353 9.57498L0.0751953 5.84165L5.79603 5.38331L8.0002 0.083313L10.2044 5.38331L15.926 5.84165L11.5669 9.57498L12.8985 15.1583L8.0002 12.1666Z" />
+          </svg>
+        }
+        @for (negativeMark of negativeReviewRating; track negativeMark) {
+          <svg class="reviews-slider-item__rating-icon reviews-slider-item__rating-icon_negative">
+            <path
+              d="M8.0002 12.1666L3.10186 15.1583L4.43353 9.57498L0.0751953 5.84165L5.79603 5.38331L8.0002 0.083313L10.2044 5.38331L15.926 5.84165L11.5669 9.57498L12.8985 15.1583L8.0002 12.1666Z" />
+          </svg>
+        }
+      </div>
+    </div>
+
+    @if (review.school?.logo) {
+      <img
+        [src]="review.school?.logo"
+        class="reviews-slider-item__schoolLogo"
+        alt="school logo"/>
+    }
+
+  </section>
+
+  <section class="reviews-slider-item__body">
+    {{ isFullTextShown ? review.text : croppedBody }}
+  </section>
+
+  @if (isMaxBodyLengthExceeded) {
+    <footer class="reviews-slider-item__footer">
+      <button class="reviews-slider-item__button-show-full" (click)="isFullTextShown = !isFullTextShown">
+        {{ isFullTextShown ? 'Скрыть' : 'Читать полностью' }}
+
+        <svg
+          width="12" height="8" viewBox="0 0 12 8"
+          [class]="{
+           'reviews-slider-item__button-show-full-icon': true,
+           'reviews-slider-item__button-show-full-icon_active': isFullTextShown,
+          }">
+          <path
+            d="M5.99962 4.97669L10.1246 0.851685L11.303 2.03002L5.99962 7.33335L0.696289 2.03002L1.87462 0.851685L5.99962 4.97669Z"
+            fill="#9B5DE5"
+          />
+        </svg>
+      </button>
+    </footer>
+  }
+</div>

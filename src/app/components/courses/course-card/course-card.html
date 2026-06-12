@@ -1,5 +1,4 @@
 <div class="course-card">
-  <!--  Название, рейтинг, отзывы  -->
   <div class="course-card__title-rating-reviews-block">
     <div class="course-card__title">{{ course?.title }}</div>
   </div>
@@ -9,21 +8,22 @@
       <img
         [src]="cdnUrl + school.logo"
         class="course-card__school-logo"
-      />
+       alt="school logo"/>
     }
 
     <div class="course-card__school-rating">
       <svg width="16" height="16" viewBox="0 0 16 16" class="course-card__rating-icon">
         <path
           d="M8.0002 12.6666L3.10186 15.6583L4.43353 10.0749L0.0751953 6.34159L5.79603 5.88325L8.0002 0.583252L10.2044 5.88325L15.926 6.34159L11.5669 10.0749L12.8985 15.6583L8.0002 12.6666Z"
-          fill="#FEE440" />
+          fill="#FEE440"
+        />
       </svg>
-      <span class="course-card__school-rating-value">{{
-          school ? school.averageRating : null
-        }}</span>
-      <span class="course-card__school-rating-reviews-count">{{
-          school ? `(${school.reviewsCount})` : null
-        }}</span>
+      <span class="course-card__school-rating-value">
+        {{ school ? school.averageRating : null }}
+      </span>
+      <span class="course-card__school-rating-reviews-count">
+        {{ school ? `(${school.reviewsCount})` : null }}
+      </span>
     </div>
 
     <div class="course-card__reviews">
@@ -73,7 +73,7 @@
   @if (isDetailsShowed) {
     <div class="course-card__duration">
       <ul class="course-card__duration-list">
-        @for (duration of (course?.durations || []); let index = $index; track duration.slug + course?.id) {
+        @for (duration of (course.durations || []); let index = $index; track duration.slug + course.id) {
           <li>
             {{ duration.title }}
           </li>
@@ -84,7 +84,7 @@
 
   @if (isDetailsShowed) {
   <ul class="course-card__format-list">
-    @for (educationFormat of (course?.educationFormats || []); let index = $index; track index.toString() + educationFormat.id) {
+    @for (educationFormat of (course.educationFormats || []); let index = $index; track index.toString() + educationFormat.id) {
       <li class="course-card__format-list-item">
         {{ educationFormat.title }}
       </li>

@@ -1,0 +1,31 @@
+<div class="container reviews-slider">
+  <div class="reviews-slider__control reviews-slider__control_left">
+    <button
+      class="reviews-slider__control-button reviews-slider__control-button_left"
+      (click)="handleControl('left')"
+    >
+      <svg>
+        <path d="M2.90872 6.99997L8 11.978L6.54564 13.4L0 6.99997L6.54564 0.599976L8 2.02197L2.90872 6.99997Z" />
+      </svg>
+    </button>
+  </div>
+  <div class="reviews-slider__list-wrapper">
+    <ul #list class="reviews-slider__list">
+      @for (review of lastReviews(); track review.id) {
+        <li class="reviews-slider__list-item">
+          <app-review-card [review]="review" />
+        </li>
+      }
+    </ul>
+  </div>
+
+  <div class="reviews-slider__control reviews-slider__control_right">
+    <button
+      class="reviews-slider__control-button reviews-slider__control-button_right"
+      (click)="handleControl('right')">
+      <svg>
+        <path d="M5.09128 6.99997L0 2.02197L1.45436 0.599976L8 6.99997L1.45436 13.4L0 11.978L5.09128 6.99997Z" />
+      </svg>
+    </button>
+  </div>
+</div>

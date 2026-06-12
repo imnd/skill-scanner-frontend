@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Course } from '@/app/store/courses/courses.model';
-import { School } from '@/app/store/schools/schools.model';
+import { Course } from '@/store/courses/courses.model';
+import { School } from '@/store/schools/schools.model';
 import { environment } from '@/environments/environment';
 import { isPlatformBrowser } from '@angular/common';
 import { inject, PLATFORM_ID } from '@angular/core';
@@ -13,8 +13,9 @@ import { inject, PLATFORM_ID } from '@angular/core';
 })
 export class CourseCard implements OnInit {
   cdnUrl = environment.cdnUrl;
-  @Input() course?: Course;
-  @Input() school?: School | null;
+  @Input({ required: true }) course!: Course;
+  @Input({ required: true }) school!: School | null;
+
   isDetailsShowed: boolean = false;
 
   priceWithoutDiscount = () => {

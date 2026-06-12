@@ -2,10 +2,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { debounce } from 'throttle-debounce'
 
 import { Store } from '@ngrx/store';
-import { Component, Input, inject } from '@angular/core';
+import { Component, Input, inject, OnInit } from '@angular/core';
 
-import { CoursesFilters, Filters, emptyFilters } from '@/components/courses-filters/courses-filters';
-import { CourseCard } from '@/components/course-card/course-card';
+import { CoursesFilters, Filters, emptyFilters } from '@/components/courses/courses-filters/courses-filters';
+import { CourseCard } from '@/components/courses/course-card/course-card';
 
 import type { PrimaryKey } from '@/app/types/utils.types';
 import { SeoData, SeoService } from '@/services/seo.service';
@@ -40,10 +40,9 @@ import { educationFormatsFeature } from '@/store/education-formats/education-for
   templateUrl: './courses-list.html',
   styleUrl: './courses-list.scss',
 })
-export class CoursesList {
+export class CoursesList implements OnInit {
   @Input() path: string = '';
 
-  isLoadingMore: boolean = false
   categorySlug!: string;
 
   filters: Filters = emptyFilters;
@@ -264,6 +263,15 @@ export class CoursesList {
     }
   }
 
+  loadCourses(filters: any) {
+    this.filters = { ...this.filters, ...filters }
+    this.updateUrl()
+    this.store.dispatch(CoursesActions.getCourses({ filters: this.filters }));
+  }
+  loadMoreCourses() {
+    this.store.dispatch(CoursesActions.loadMore({ filters: this.filters }));
+  }
+
   ngOnInit() {
     this.store.dispatch(CoursesCategoriesActions.getCoursesCategories());
 
@@ -283,14 +291,5 @@ export class CoursesList {
 
     // Диспатчим экшен для получения courses с бэкенда при загрузке компонента
     this.store.dispatch(CoursesActions.getCourses({ filters: this.filters }));
-  }
-
-  loadCourses(filters: any) {
-    this.filters = { ...this.filters, ...filters }
-    this.updateUrl()
-    this.store.dispatch(CoursesActions.getCourses({ filters: this.filters }));
-  }
-  loadMoreCourses() {
-    this.store.dispatch(CoursesActions.loadMore({ filters: this.filters }));
   }
 }
