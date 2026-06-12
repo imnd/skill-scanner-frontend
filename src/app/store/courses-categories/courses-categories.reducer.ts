@@ -68,6 +68,7 @@ export const { selectCoursesCategoriesState, selectTopCategories } = coursesCate
 export const { selectIds, selectEntities, selectAll, selectTotal } = adapter.getSelectors(selectCoursesCategoriesState);
 
 export const selectCategoryById = (catId: number | string) =>
-  createSelector(selectAll, (categories) =>
-    categories.find((c: any) => Number(c.id) === Number(catId)) || null
+  createSelector(selectAll, (categories: CoursesCategory[]) =>
+    categories.find((cat: CoursesCategory) => Number(cat.id) === Number(catId)) || null
   );
+

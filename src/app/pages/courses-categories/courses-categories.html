@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="top_h1_text">
+    <h1 class="top-h1">Все категории онлайн-курсов IT и Digital</h1>
+  </div>
+
+  <div class="content-withe">
+    <div class="groups-crosslinks-wrapper">
+      @for (category of topCategories(); track category.id) {
+      <div class="group-holder">
+        <p class="group-title">
+          <a [href]="`/courses/${category.slug}/`">
+            <img [src]="category.icon" alt="category" />
+            <span>{{ category.title }}</span>
+          </a>
+        </p>
+
+        <ul [class]="(isCategoryFolded(category) && 'categories-list_folded') + ' categories-list'">
+          @for (subCategory of category.subCategories; track subCategory.id) {
+          <li class="categories-list__item">
+            <a
+              [title]="`${subCategory.title}`"
+              [href]="`/courses/${subCategory.slug}/`"
+            >
+              {{ subCategory.title }}
+            </a>
+          </li>
+          }
+        </ul>
+
+        @if ((category.subCategories?.length || 0) > 6) {
+        <p
+          class="toggle"
+          (click)="foldUnfoldCategory(category)"
+          [attr.data-category]="`${category.id}`"
+          data-prev-text="Свернуть"
+        >
+          {{ isCategoryFolded(category) ? 'Показать еще...' : 'Свернуть' }}
+        </p>
+        }
+      </div>
+      }
+    </div>
+  </div>
+</div>

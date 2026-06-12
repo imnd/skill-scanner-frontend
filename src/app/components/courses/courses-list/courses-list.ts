@@ -46,7 +46,7 @@ export class CoursesList implements OnInit {
   categorySlug!: string;
 
   filters: Filters = emptyFilters;
-  seo: SeoData | undefined;
+  seo?: SeoData;
 
   constructor(
     private route: ActivatedRoute,

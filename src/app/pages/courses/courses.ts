@@ -4,7 +4,6 @@ import { setBreadcrumbs } from '@/store/breadcrumbs/breadcrumbs.actions';
 import { CoursesList } from '@/components/courses/courses-list/courses-list';
 
 @Component({
-  selector: 'app-courses',
   imports: [ CoursesList ],
   templateUrl: './courses.html',
   styleUrl: './courses.scss',
