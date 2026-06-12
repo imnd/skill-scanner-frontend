@@ -269,6 +269,7 @@ export class CoursesList implements OnInit {
     this.store.dispatch(CoursesActions.getCourses({ filters: this.filters }));
   }
   loadMoreCourses() {
+    this.filters.page++;
     this.store.dispatch(CoursesActions.loadMore({ filters: this.filters }));
   }
 
