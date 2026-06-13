@@ -16,10 +16,8 @@ export class Home implements OnInit {
   title = 'Онлайн-школы';
   limit = 9;
 
-  // Выбираем данные как сигнал (Signal)
   topCategories = this.store.selectSignal(selectTopCategories);
   ngOnInit() {
-    // Диспатчим экшен для получения топ-категорий с бэкенда при загрузке компонента
     this.store.dispatch(CoursesCategoriesActions.getTopCategories({ limit: this.limit }));
   }
 }

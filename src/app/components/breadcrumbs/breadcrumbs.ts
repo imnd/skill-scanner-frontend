@@ -11,6 +11,5 @@ import { AsyncPipe } from '@angular/common';
 })
 export class Breadcrumbs {
   private readonly store = inject(Store);
-
   breadcrumbs$ = this.store.select(selectBreadcrumbs);
 }

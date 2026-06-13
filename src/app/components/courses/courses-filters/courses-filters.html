@@ -5,7 +5,7 @@
     class="courses-filters__search-field"
     type="text"
     placeholder="Поиск..."
-  >
+  />
 
   <button class="courses-filters__button-show-filters" title="Показать фильтры" (click)="isShowModal = true">
     <svg width="16" height="16" viewBox="0 0 16 16" class="courses-filters__button-show-filters-icon">
@@ -38,7 +38,7 @@
   <div class="courses-filters__table-section">
     <app-multiple-select
       [(value)]="filters.selectedCategories"
-      [items]="categories()"
+      [items]="filtersService.categories()"
       [withChildren]="true"
       [selectTitle]="'Категория'"
       [itemValuePropName]="'id'"
@@ -52,7 +52,7 @@
 
     <app-multiple-select
       [(value)]="filters.selectedSchools"
-      [items]="schools()"
+      [items]="filtersService.schools()"
       [selectTitle]="'Школа'"
       [itemValuePropName]="'id'"
       [itemTitlePropName]="'title'"
@@ -62,7 +62,7 @@
 
     <app-multiple-select
       [(value)]="filters.selectedDuration"
-      [items]="duration()"
+      [items]="filtersService.duration()"
       [selectTitle]="'Продолжительность'"
       [itemValuePropName]="'id'"
       [itemTitlePropName]="'title'"
@@ -71,32 +71,32 @@
     />
 
     <app-multiple-select
-      [(value)]="filters.selectedPaymentTypes"
-      [items]="paymentTypes()"
+      [value]="filters.selectedPaymentTypes"
+      (valueChange)="filters.selectedPaymentTypes = $event"
+      [items]="filtersService.paymentTypes()"
       [selectTitle]="'Тип оплаты'"
       [itemValuePropName]="'id'"
       [itemTitlePropName]="'title'"
-      (valueChange)="filters.selectedPaymentTypes = $event"
       [class]="'courses-filters__payment-type'"
     />
 
     <app-multiple-select
-      [(value)]="filters.selectedEducationFormats"
-      [items]="educationFormats()"
+      [value]="filters.selectedEducationFormats"
+      (valueChange)="filters.selectedEducationFormats = $event"
+      [items]="filtersService.educationFormats()"
       [selectTitle]="'Формат обучения'"
       [itemValuePropName]="'id'"
       [itemTitlePropName]="'title'"
-      (valueChange)="filters.selectedEducationFormats = $event"
       [class]="'courses-filters__education-format'"
     />
   </div>
-  @if (courses()) {
+  @if (filtersService.courses()) {
     <div class="courses-filters__table-header">
       <div
         (click)="handleSorting('courseName')"
         [class]="{
-          'courses-filters__table-header-title_sort-asc' : filters.sorting?.field && filters.sorting?.field === 'courseName' && filters.sorting?.type && filters.sorting?.type === 'ASC',
-          'courses-filters__table-header-title_sort-desc' : filters.sorting?.field && filters.sorting?.field === 'courseName' && filters.sorting?.type && filters.sorting?.type === 'DESC',
+          'courses-filters__table-header-title_sort-asc' : filters.sorting.field && filters.sorting.field === 'courseName' && filters.sorting.type && filters.sorting.type === 'ASC',
+          'courses-filters__table-header-title_sort-desc' : filters.sorting.field && filters.sorting.field === 'courseName' && filters.sorting.type && filters.sorting.type === 'DESC',
           'courses-filters__table-header-title' : true
         }"
       >
@@ -105,8 +105,8 @@
       <div
         (click)="handleSorting('schoolName')"
         [class]="{
-          'courses-filters__table-header-title_sort-asc': filters.sorting?.field && filters.sorting?.field === 'schoolName' && filters.sorting?.type && filters.sorting?.type === 'ASC',
-          'courses-filters__table-header-title_sort-desc': filters.sorting?.field && filters.sorting?.field === 'schoolName' && filters.sorting?.type && filters.sorting?.type === 'DESC',
+          'courses-filters__table-header-title_sort-asc': filters.sorting.field && filters.sorting.field === 'schoolName' && filters.sorting.type && filters.sorting.type === 'ASC',
+          'courses-filters__table-header-title_sort-desc': filters.sorting.field && filters.sorting.field === 'schoolName' && filters.sorting.type && filters.sorting.type === 'DESC',
           'courses-filters__table-header-title' : true
      }">
         Школа
@@ -114,8 +114,8 @@
       <div
         (click)="handleSorting('price')"
         [class]="{
-          'courses-filters__table-header-title_sort-asc': filters.sorting?.field && filters.sorting?.field === 'price' && filters.sorting?.type && filters.sorting?.type === 'ASC',
-          'courses-filters__table-header-title_sort-desc': filters.sorting?.field && filters.sorting?.field === 'price' && filters.sorting?.type && filters.sorting?.type === 'DESC',
+          'courses-filters__table-header-title_sort-asc': filters.sorting.field && filters.sorting.field === 'price' && filters.sorting.type && filters.sorting.type === 'ASC',
+          'courses-filters__table-header-title_sort-desc': filters.sorting.field && filters.sorting.field === 'price' && filters.sorting.type && filters.sorting.type === 'DESC',
           'courses-filters__table-header-title' : true
       }">
         Цена
@@ -123,8 +123,8 @@
       <div
         (click)="handleSorting('duration')"
         [class]="{
-          'courses-filters__table-header-title_sort-asc': filters.sorting?.field && filters.sorting?.field === 'duration' && filters.sorting?.type && filters.sorting?.type === 'ASC',
-          'courses-filters__table-header-title_sort-desc': filters.sorting?.field && filters.sorting?.field === 'duration' && filters.sorting?.type && filters.sorting?.type === 'DESC',
+          'courses-filters__table-header-title_sort-asc': filters.sorting.field && filters.sorting.field === 'duration' && filters.sorting.type && filters.sorting.type === 'ASC',
+          'courses-filters__table-header-title_sort-desc': filters.sorting.field && filters.sorting.field === 'duration' && filters.sorting.type && filters.sorting.type === 'DESC',
           'courses-filters__table-header-title' : true
        }">
         Длительность
@@ -140,11 +140,11 @@
       <span class="courses-filters__modal-counter-line-title">
         Всего выбрано: {{ selectedFiltersCount }}
       </span>
-      <span class="courses-filters__modal-counter-line-reset" (click)="resetFilters">Сбросить</span>
+      <span class="courses-filters__modal-counter-line-reset" (click)="resetFilters()">Сбросить</span>
     </div>
 
     <app-selector
-      [items]="categories()"
+      [items]="filtersService.categories()"
       [(value)]="filters.selectedCategories"
       [withChildren]="true"
       [itemValuePropName]="'id'"
@@ -157,7 +157,7 @@
 
     <app-selector
       [(value)]="filters.selectedSchools"
-      [items]="schools()"
+      [items]="filtersService.schools()"
       [itemValuePropName]="'id'"
       [itemTextPropName]="'title'"
       [title]="'Школа'"
@@ -165,7 +165,7 @@
 
     <app-selector
       [(value)]="filters.selectedDuration"
-      [items]="duration()"
+      [items]="filtersService.duration()"
       [itemValuePropName]="'id'"
       [itemTextPropName]="'title'"
       [title]="'Длительность'"
@@ -173,7 +173,7 @@
 
     <app-selector
       [(value)]="filters.selectedPaymentTypes"
-      [items]="paymentTypes()"
+      [items]="filtersService.paymentTypes()"
       [itemValuePropName]="'id'"
       [itemTextPropName]="'title'"
       [title]="'Тип оплаты'"
@@ -181,15 +181,15 @@
 
     <app-selector
       [(value)]="filters.selectedEducationFormats"
-      [items]="educationFormats()"
+      [items]="filtersService.educationFormats()"
       [itemValuePropName]="'id'"
       [itemTextPropName]="'title'"
       [title]="'Формат обучения'"
     />
 
     <button class="courses-filters__modal-button" (click)="isShowModal = false">
-      @if (coursesCount()) {
-        <span>Показать {{ coursesCount() }} курс(а)</span>
+      @if (filtersService.coursesCount()) {
+        <span>Показать {{ filtersService.coursesCount() }} курс(а)</span>
       } @else {
         <span>Ничего не найдено</span>
       }

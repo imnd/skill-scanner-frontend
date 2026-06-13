@@ -1,4 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ValueControl } from '@/components/ui/value-control.base';
 
 type Value = number | string | object;
 
@@ -11,23 +12,13 @@ type Value = number | string | object;
   templateUrl: './select.html',
   styleUrl: './select.scss',
 })
-export class Select {
+export class Select extends ValueControl<Value> {
   @Input({ required: true }) selectTitle!: string;
   @Input() itemValuePropName: string = 'value';
   @Input() itemTitlePropName: string = 'title';
   @Input() items: any[] = [];
 
   isActive = false;
-
-  // value/model binding
-  @Input() value?: Value;
-  get model(): Value | undefined {
-    return this.value;
-  }
-  @Output() valueChange = new EventEmitter<Value>();
-  set model(val: Value) {
-    this.valueChange.emit(val);
-  }
 
   get title () {
     if (this.value) {

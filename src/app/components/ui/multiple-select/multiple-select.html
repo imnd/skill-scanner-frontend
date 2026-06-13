@@ -44,7 +44,8 @@
             <li class="edvisor-select__list-item edvisor-select__list-item_selectable">
               @if (withChildren) {
                 <app-checkbox-group
-                  [(value)]="model"
+                  [value]="model || []"
+                  (valueChange)="onValueChange($event)"
                   [id]="item[itemValuePropName]"
                   [text]="item[itemTitlePropName]"
                   [items]="item[childrenPropName]"
@@ -53,7 +54,8 @@
                 />
               } @else {
                 <app-checkbox
-                  [(value)]="model"
+                  [value]="model || []"
+                  (valueChange)="onValueChange($event)"
                   [id]="item[itemValuePropName]"
                   [text]="item[itemTitlePropName]"
                 />

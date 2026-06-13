@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Checkbox } from '@/components/ui/checkbox/checkbox';
-import type { Id } from '@/app/types/utils.types';
+import { ValueControl } from '@/components/ui/value-control.base';
+import { Id } from '@/app/utils/utils.types';
 
 @Component({
   selector: 'app-checkbox-group',
@@ -8,34 +9,27 @@ import type { Id } from '@/app/types/utils.types';
   templateUrl: './checkbox-group.html',
   styleUrl: './checkbox-group.scss',
 })
-export class CheckboxGroup implements OnInit {
+export class CheckboxGroup<
+  TValueKey extends string,
+  TTextKey extends string
+> extends ValueControl<Id[]> implements OnInit {
+  @Input() itemValuePropName: TValueKey = 'value' as TValueKey;
+  @Input() itemTextPropName: TTextKey = 'text' as TTextKey;
+  @Input() override value: Id[] = [];
   @Input({ required: true }) id!: Id;
   @Input({ required: true }) text!: string;
-  @Input({ required: true }) items!: Record<string, string>[];
-  @Input() itemValuePropName: string = 'value';
-  @Input() itemTextPropName: string = 'text';
+  @Input({ required: true }) items!: (Record<TValueKey, Id> & Record<TTextKey, string>)[];
 
   isToggled: boolean = false;
-
-  // value/model binding
-  @Input() value: Id[] = [];
-  get model(): Id[] {
-    return this.value;
-  }
-  @Output() valueChange = new EventEmitter<Id[]>();
-  @Output() input = new EventEmitter<any[]>();
-  set model(val: Id[]) {
-    this.valueChange.emit(val);
-    this.input.emit(val);
-  }
 
   get isParentChecked () {
     return this.value.includes(this.id)
   }
 
-  parentChangeState (newModelValue: unknown[]) {
-    this.isToggled = newModelValue.includes(this.id)
+  parentChangeState (newModelValue: Id[]) {
+    this.model = newModelValue;
 
+    this.isToggled = newModelValue.includes(this.id)
     const allValues = [...this.items.map(item => item[this.itemValuePropName]), this.id]
     const modelWithoutAllValues = this.value.filter(item => !allValues.includes(item))
 

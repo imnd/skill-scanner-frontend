@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, inject, OnInit, effect } from '@angular/core';
+import { Component, ViewChild, ElementRef, inject, OnInit } from '@angular/core';
 import { ReviewCard } from '@/components/reviews/review-card/review-card';
 import { schoolReviewsFeature } from '@/store/school-reviews/school-reviews.reducer';
 import { SchoolReviewsActions } from '@/store/school-reviews/school-reviews.actions';
@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-reviews-list',
-  imports: [ReviewCard],
+  imports: [ ReviewCard ],
   templateUrl: './reviews-list.html',
   styleUrl: './reviews-list.scss',
 })

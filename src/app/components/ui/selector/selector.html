@@ -26,7 +26,8 @@
           <app-checkbox
             [id]="item[itemValuePropName]"
             [text]="item[itemTextPropName]"
-            [(value)]="model"
+            [value]="model"
+            (valueChange)="onValueChange($event)"
           />
         }
       </li>

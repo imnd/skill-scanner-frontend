@@ -5,7 +5,6 @@ import { CoursesCategoriesActions } from '@/store/courses-categories/courses-cat
 import { CoursesCategory } from '@/store/courses-categories/courses-categories.model';
 import { setBreadcrumbs } from '@/store/breadcrumbs/breadcrumbs.actions';
 import { ActivatedRoute } from '@angular/router';
-import { coursesFeature } from '@/store/courses/courses.reducer';
 
 @Component({
   imports: [],

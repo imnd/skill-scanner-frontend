@@ -1,5 +1,11 @@
+const baseUrl = 'http://edvisor-backend.com';
+const baseAppUrl = 'http://edvisor-backend.com/';
+const apiUrl = baseAppUrl + 'api/v1';
+const redirectUrl = baseAppUrl + 'redirect?link=';
+
 export const environment = {
-  apiUrl: 'https://edvisor-backend.com/api/v1',
-  baseUrl: 'http://edvisor-backend.com',
+  baseUrl,
+  apiUrl,
+  redirectUrl,
   cdnUrl: 'https://cdn.example.com',
 };

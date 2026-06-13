@@ -1,0 +1,29 @@
+.select-sorting,
+.showsitem_select {
+  border: 1px solid #E0E0E0;
+  height: 56px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.edvlisting-items {
+  width: 100%;
+  padding-left: 32px;
+}
+
+.search-sorting {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.edvlisting-items_title {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  color: #000;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 120%;
+  font-feature-settings: "pnum" on, "lnum" on;
+}

@@ -10,8 +10,8 @@ import { SalesActions } from '@/store/sales/sales.actions';
   styleUrl: './sales-list.scss',
 })
 export class SalesList implements OnInit {
-  private store   = inject(Store);
-  sales     = this.store.selectSignal(salesFeature.selectAll);
+  private store= inject(Store);
+  sales      = this.store.selectSignal(salesFeature.selectAll);
 
   ngOnInit() {
     this.store.dispatch(SalesActions.getSales());

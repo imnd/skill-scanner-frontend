@@ -30,7 +30,7 @@ export class SchoolsEffects {
           map((response) =>
             SchoolsActions.getSchoolsSuccess({
               schools: response.data,
-              count: response.count || 0,
+              count: response.meta.total || 0,
             })
           ),
           catchError((error) => of(SchoolsActions.getSchoolsFailure({ error })))

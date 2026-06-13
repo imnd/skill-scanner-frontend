@@ -1,8 +1,7 @@
-import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
+import { Component, Input, Output, EventEmitter, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
-import type { PrimaryKey } from '@/app/types/utils.types';
 import { schoolsFeature } from '@/store/schools/schools.reducer';
 import { coursesFeature } from '@/store/courses/courses.reducer';
 import { coursesCategoriesFeature } from '@/store/courses-categories/courses-categories.reducer';
@@ -14,40 +13,10 @@ import { MultipleSelect } from '@/components/ui/multiple-select/multiple-select'
 import { Selector } from '@/components/ui/selector/selector';
 import { Select } from '@/components/ui/select/select';
 
-type Sorting = {
-  field: string
-  type: 'ASC' | 'DESC'
-}
-
-export type Filters = {
-  selectedCategories: PrimaryKey[]
-  selectedSchools: PrimaryKey[]
-  selectedDuration: PrimaryKey[]
-  selectedPaymentTypes: PrimaryKey[]
-  selectedEducationFormats: PrimaryKey[]
-
-  sorting?: Sorting | null
-  searchString: string
-  limit: number
-  page: number
-}
-
-export const emptyFilters: Filters = {
-  selectedCategories: [],
-  selectedSchools: [],
-  selectedDuration: [],
-  selectedPaymentTypes: [],
-  selectedEducationFormats: [],
-  sorting: null,
-  searchString: '',
-  limit: 20,
-  page: 1,
-}
-
-type AvailableSorting = {
-  value: Sorting,
-  title: string,
-}
+import type { Filters, Sorting, AvailableSorting } from '@/app/utils/utils.types';
+import { emptyFilters } from '@/app/utils/utils.consts';
+import { FiltersService } from '@/services/filters.service';
+import { CheckboxGroup } from '@/components/ui/checkbox-group/checkbox-group';
 
 @Component({
   selector: 'app-courses-filters',
@@ -55,7 +24,7 @@ type AvailableSorting = {
   templateUrl: './courses-filters.html',
   styleUrl: './courses-filters.scss',
 })
-export class CoursesFilters {
+export class CoursesFilters implements OnInit {
   doesSearchFieldHaveVisibleModifier = false
   isShowModal = false
 
@@ -126,12 +95,8 @@ export class CoursesFilters {
     this.filterChangedHandler()
   }
 
-  private store   = inject(Store);
-  categories = this.store.selectSignal(coursesCategoriesFeature.selectAll);
-  courses     = this.store.selectSignal(coursesFeature.selectAll);
-  schools     = this.store.selectSignal(schoolsFeature.selectAll);
-  duration = this.store.selectSignal(durationFeature.selectAll);
-  paymentTypes = this.store.selectSignal(paymentTypesFeature.selectAll);
-  educationFormats = this.store.selectSignal(educationFormatsFeature.selectAll);
-  coursesCount = this.store.selectSignal(coursesFeature.selectCoursesCount);
+  filtersService = inject(FiltersService);
+  ngOnInit() {
+    this.filtersService.loadAll();
+  }
 }

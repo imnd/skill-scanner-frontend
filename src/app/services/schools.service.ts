@@ -34,6 +34,6 @@ export class SchoolsService {
 
   getSchools(filters: any) {
     const params = this.buildHttpParams(filters);
-    return this.http.get<{ count: number; data: School[] }>(this.apiUrl, { params });
+    return this.http.get<{ meta: { total: number }; data: School[] }>(this.apiUrl, { params });
   }
 }

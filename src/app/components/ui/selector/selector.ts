@@ -2,7 +2,8 @@ import { Component, EventEmitter, Input, Output, ElementRef, inject, OnInit } fr
 import { Modal } from '@/components/ui/modal/modal';
 import { Checkbox } from '@/components/ui/checkbox/checkbox';
 import { CheckboxGroup } from '@/components/ui/checkbox-group/checkbox-group';
-import type { Id } from '@/app/types/utils.types';
+import type { Id } from '@/app/utils/utils.types';
+import { ValueControl } from '@/components/ui/value-control.base';
 
 @Component({
   selector: 'app-selector',
@@ -10,7 +11,7 @@ import type { Id } from '@/app/types/utils.types';
   templateUrl: './selector.html',
   styleUrl: './selector.scss',
 })
-export class Selector implements OnInit {
+export class Selector extends ValueControl<Id[]> implements OnInit {
   @Input({ required: true }) items!: any[];
   @Input({ required: true }) title!: string;
   @Input() withChildren: boolean = false;
@@ -23,16 +24,10 @@ export class Selector implements OnInit {
   isItemsShowed = false
   parentHeight = 0
 
-  // value/model binding
-  @Input() value: Id[] = [];
-  get model(): Id[] {
+  @Input() override value: Id[] = [];
+  override get model(): Id[] {
     return this.value;
   }
-  @Output() valueChange = new EventEmitter<Id[]>();
-  set model(val: Id[]) {
-    this.valueChange.emit(val);
-  }
-
   get modalComponent () {
     return this.withChildren ? 'CheckboxGroup' : 'Checkbox'
   }

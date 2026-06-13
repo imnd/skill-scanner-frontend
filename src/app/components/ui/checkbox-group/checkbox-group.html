@@ -1,10 +1,10 @@
 <div class="edvisor-checkbox-group">
   <div class="edvisor-checkbox-group__parent">
     <app-checkbox
-      [(value)]="model"
+      [value]="model || []"
       [id]="id"
       [text]="text"
-      (valueChange)="parentChangeState([$event])"
+      (valueChange)="parentChangeState([$any($event)])"
       [class]="'edvisor-checkbox-group__parent-input'"
     />
 
@@ -24,13 +24,13 @@
   </div>
   @if (isToggled) {
   <ul class="edvisor-checkbox-group__children-list">
-    @for (item of items; let itemIndex=$index; track itemIndex;) {
+    @for (item of items; let itemIndex = $index; track itemIndex;) {
     <li class="edvisor-checkbox-group__children-list-item">
       <app-checkbox
         [id]="item[itemValuePropName]"
         [text]="item[itemTextPropName]"
-        [(value)]="model"
-        (valueChange)="model = $event"
+        [value]="model || []"
+        (valueChange)="onValueChange($event)"
       />
     </li>
     }

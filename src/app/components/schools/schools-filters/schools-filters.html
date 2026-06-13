@@ -1,0 +1,73 @@
+<div class="edvlisting-sidebar">
+  <div class="edvlisting-sidebar-inner">
+    <div class="title-sidebar-phone">
+      Фильтры
+      <button class="close-filter">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.9997 10.586L16.9497 5.63599L18.3637 7.04999L13.4137 12L18.3637 16.95L16.9497 18.364L11.9997 13.414L7.04974 18.364L5.63574 16.95L10.5857 12L5.63574 7.04999L7.04974 5.63599L11.9997 10.586Z"
+            fill="#B8B8B8" />
+        </svg>
+      </button>
+    </div>
+    <!--@if (filtersService.categories() && filtersService.categories().length > 0) {
+    <aside>
+      <div class="title-sidebar">Категория курса</div>
+      <div class="hide-phone">
+        @for (category of filtersService.categories(); track category.id) {
+          <app-checkbox-group
+            [(value)]="selectedCategories"
+            (valueChange)="handleFilterChanging()"
+            [id]="category.id"
+            [text]="category.title"
+            [items]="$any(category.subCategories)"
+            [itemValuePropName]="'id'"
+            [itemTextPropName]="'title'"
+            class="schools__categories-list"
+          />
+        }
+      </div>
+    </aside>
+    }-->
+    @if (filtersService.paymentTypes() && filtersService.paymentTypes().length > 0) {
+    <aside>
+      <div class="title-sidebar">Тип оплаты</div>
+      <div class="hide-phone">
+        <app-checkbox-list
+          [(value)]="selectedPaymentTypes"
+          [items]="$any(filtersService.paymentTypes())"
+          [itemValuePropName]="'id'"
+          [itemTextPropName]="'title'"
+          (input)="handleFilterChanging()"
+        />
+      </div>
+    </aside>
+    }
+    @if (filtersService.educationFormats() && filtersService.educationFormats().length > 0) {
+    <aside>
+      <div class="title-sidebar">Формат обучения</div>
+      <div class="hide-phone">
+        <app-checkbox-list
+          [(value)]="selectedEducationFormats"
+          [items]="$any(filtersService.educationFormats())"
+          [itemValuePropName]="'id'"
+          [itemTextPropName]="'title'"
+          (input)="handleFilterChanging()"
+        />
+      </div>
+    </aside>
+    }
+  </div>
+  <aside class="show-filter-phone-aside">
+    <button class="btn-feo show-filter-phone">
+      <span>
+        @if (filtersService.schoolsCount()) {
+          Показать {{ filtersService.schoolsCount() || '' }} школ(ы)
+        } @else {
+          Ничего не найдено
+        }
+      </span>
+    </button>
+  </aside>
+</div>

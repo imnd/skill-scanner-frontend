@@ -1,6 +1,6 @@
 <div class="course-card">
   <div class="course-card__title-rating-reviews-block">
-    <div class="course-card__title">{{ course?.title }}</div>
+    <div class="course-card__title">{{ course.title }}</div>
   </div>
 
   <div class="course-card__school-block">
@@ -37,15 +37,15 @@
     @if (priceWithoutDiscount()) {
       <div
         class="course-card__price-without-discount"
-        [class]="{ 'course-card__price-without-discount_crossed-out' : course?.priceWithDiscount !== null }"
+        [class]="{ 'course-card__price-without-discount_crossed-out' : course.priceWithDiscount !== null }"
       >
         {{ priceWithoutDiscount() }} ₽
       </div>
     }
 
-    @if (course?.priceWithDiscount) {
+    @if (course.priceWithDiscount) {
       <div class="course-card__price-with-discount">
-        {{ course?.priceWithDiscount }} ₽
+        {{ course.priceWithDiscount }} ₽
       </div>
     }
 
@@ -57,7 +57,7 @@
   </div>
 
   <div class="course-card__buttons-block">
-    <a [href]="`/goto?sg=2&obj=${course?.id}`" target="_blank">
+    <a [href]="`/goto?sg=2&obj=${course.id}`" target="_blank">
       <button class="course-card__button-course-site">
         На сайт курса
 

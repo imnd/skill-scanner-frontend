@@ -1,0 +1,35 @@
+<div class="edvlisting-item">
+  @if (school.logo) {
+    <div class="logo-item">
+      <a [href]="`/schools/${school.slug}/`"><img [src]="school.logo"  alt="school logo"/></a>
+    </div>
+  }
+
+  <div class="reviews">
+    <div class="title">
+      <a [href]="`/schools/${school.slug}/`">{{ school.title }}</a>
+    </div>
+    <div class="edv-rating">
+      <div class="star"></div>
+      <div class="value">{{ school.averageRating }}</div>
+      <a [href]="`/schools/${school.slug}/`">{{ school.reviewsCount }} отзыва о школе</a>
+    </div>
+  </div>
+  @if (school.categories && school.categories.length > 0) {
+    <ul class="tags">
+      @for (schoolCategory of school.categories; track schoolCategory.id) {
+        <li>
+          {{ schoolCategory.title }}
+        </li>
+      }
+    </ul>
+  }
+  <div class="flex-description">
+    <div class="text-desc">
+      {{ school.shortDescription }}
+    </div>
+    <div class="buttons">
+      <a [href]="`${school.link}`" class="btn-feo btn-feo-arrow" target="_blank">На сайт школы</a>
+    </div>
+  </div>
+</div>

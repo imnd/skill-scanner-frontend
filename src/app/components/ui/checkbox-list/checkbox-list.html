@@ -1,0 +1,34 @@
+<div class="checkbox-items">
+  @for (item of visibleItems; track item[itemValuePropName]) {
+  <app-checkbox
+    [id]="item[itemValuePropName]"
+    [text]="item[itemTextPropName]"
+    [value]="model || []"
+    (input)="model = $event"
+    class="checkbox-items__checkbox"
+  />
+  }
+  @if (isHiddenItemsShowed) {
+    <template>
+      @for (item of hiddenItems; track item[itemValuePropName]) {
+        <app-checkbox
+          [id]="item[itemValuePropName]"
+          [text]="item[itemTextPropName]"
+          [value]="model || []"
+          (input)="model = $event"
+          class="checkbox-items__checkbox"
+        />
+      }
+    </template>
+  }
+</div>
+
+@if (!isHiddenItemsShowed && items.length > visibleItemsSize) {
+  <button
+    class="see-all-checkbox"
+    (click)="isHiddenItemsShowed = !isHiddenItemsShowed"
+  >
+    Смотреть все ({{ items.length }})
+  </button>
+}
+
