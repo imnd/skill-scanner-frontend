@@ -1,0 +1,65 @@
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1270px;
+  }
+}
+
+.posts-page {
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  min-height: calc(100vh - 106px - 60px - 70px - 106px);
+
+  &__list-item {
+    margin-bottom: 40px;
+  }
+
+  &__list-item-cover {
+    border-radius: 8px;
+    margin-bottom: 16px;
+    height: 220px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__list-item-date-views-block {
+    color: #757575;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  &__list-item-views {
+    background: url("/assets/images/eye.svg") no-repeat left center;
+    padding-left: 27px;
+  }
+
+  &__list-item-title {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 120%;
+    margin-bottom: 12px;
+  }
+}

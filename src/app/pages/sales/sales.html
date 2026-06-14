@@ -1,1 +1,49 @@
-<p>sales works!</p>
+<div class="container">
+  <div class="top_h1_text">
+    <h1 class="top-h1">Акции</h1>
+    <div class="top-text">
+      <p>На этой странице мы предоставляем все текущие промо-акции и скидки онлайн-школ!
+        Надеемся, они будут вам полезны!</p>
+    </div>
+  </div>
+  @if (sales().length > 0) {
+    <div class="edv-shares">
+      @for (sale of sales(); track sale.id) {
+        <div class="item">
+          <div class="img">
+            @if (sale.school.logo) {
+              <img
+                [src]="sale.school.logo"
+                class="img img-fluid"
+                alt="sale school logo"
+              />
+            }
+          </div>
+          <div class="reviews">
+            <div class="title">{{ sale.school.title }}</div>
+            <div class="edv-rating">
+              <div class="star"></div>
+              <div class="value">{{ sale.averageRating }}</div>
+            </div>
+          </div>
+
+          <div class="date">
+            Срок проведения: c {{ dateTimeService.formatDate(sale.dateStart || '') }} до
+            {{ dateTimeService.formatDate(sale.dateEnd || '') }}
+          </div>
+          <div class="title-shares">{{ sale.title }}</div>
+          <div class="text">
+            {{ sale.description }}
+          </div>
+          <a [href]="sale.saleUrl" target="_blank" class="btn-feo btn-feo-arrow">
+            Акция на сайте школы
+          </a>
+        </div>
+      }
+    </div>
+  } @else {
+    <div>
+      В данный момент нет акций
+    </div>
+  }
+</div>

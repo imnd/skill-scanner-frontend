@@ -8,6 +8,7 @@ export interface Sale {
   title: string;
   description?: string;
   saleUrl?: string;
+  averageRating?: number;
 }
 
 

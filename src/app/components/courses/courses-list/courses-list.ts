@@ -37,17 +37,10 @@ export class CoursesList implements OnInit {
   filters: Filters = emptyFilters;
   seo?: SeoData;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private seoService: SeoService,
-  ) {}
-
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
+  private seoService = inject(SeoService);
   private store   = inject(Store);
-
-  getCourses() {
-    this.store.dispatch(CoursesActions.getCourses({ filters: this.filters }));
-  }
 
   getSchoolById(id: PrimaryKey) {
     return this.store.selectSignal(selectSchoolById(id))() || null;

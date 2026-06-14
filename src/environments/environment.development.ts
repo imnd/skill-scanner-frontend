@@ -8,4 +8,57 @@ export const environment = {
   baseUrl,
   redirectUrl,
   cdnUrl: '',
+  seo: {
+    index: {
+      robots: true,
+      title: '',
+      description: '',
+      og: {
+        title: '',
+        description: '',
+        image: {
+          path: '',
+          width: '',
+          height: '',
+        },
+      },
+      twitter_card: '',
+    },
+    posts: {
+      robots: true,
+      title: '',
+      description: '',
+      og: {
+        title: '',
+        description: '',
+        image: {
+          path: '',
+          width: '',
+          height: '',
+        },
+      },
+      twitter_card: '',
+    },
+    categories: {
+      '': '',
+    },
+    schools: {
+      '': '',
+    },
+    sales: {
+      '': '',
+    },
+    courses: {
+      '': '',
+    },
+    'privacy-policy': {
+      '': '',
+    },
+    'terms-of-use': {
+      '': '',
+    },
+    'about-us': {
+      '': '',
+    },
+  },
 };

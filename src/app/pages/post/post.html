@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="edvisor-blog-post">
+    <div class="row">
+      <div class="col-12">
+        <div
+          class="edvisor-blog-post__cover"
+          [style]="{ backgroundImage: `url(${post().cover})` }">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="edvisor-blog-post__date-views-block">
+          <div class="edvisor-blog-post__date-views-block-date">
+            {{ dateTimeService.formatDate(post().createdAt) }}
+          </div>
+          <div class="edvisor-blog-post__date-views-block-views">
+            {{ post().viewsCount }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-8">
+        <h1 class="edvisor-blog-post__title">{{ post().title }}</h1>
+
+        <p class="edvisor-blog-post__lead-paragraph" [innerHTML]="post().shortText"></p>
+
+        <div class="edvisor-blog-post__content" [innerHTML]="post().text"></div>
+
+        <div class="edvisor-blog-post__banner">
+          <div class="edvisor-blog-post__banner-title">И что с этим делать?</div>
+
+          <div class="edvisor-blog-post__banner-text">
+            Мы знаем, как сложно определиться с обучением и найти свой путь.
+            Поэтому создали Edvisor — агрегатор онлайн-образования с удобным фильтром,
+            отзывами выпускников и механизмами сравнения.
+            Мы поможем вам выбрать курс, один и самый подходящий.
+          </div>
+
+          <a
+            [href]="`/posts/${post().slug}/`"
+            target="_blank"
+            class="edvisor-blog-post__banner-button"
+          >Да, помогите мне</a>
+        </div>
+      </div>
+
+      <div class="col-xl-4">
+        <div class="edvisor-blog-post__share-block">
+          <div class="edvisor-blog-post__share-block-title">Поделиться статьей:</div>
+          <ul class="edvisor-blog-post__share-block-list">
+            @for (socNet of socNets; track socNet) {
+            <li>
+              <a
+                [href]="`${socNet.url}`"
+                target="_blank">
+                <img [src]="'icons/' + socNet.logo"  />
+              </a>
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

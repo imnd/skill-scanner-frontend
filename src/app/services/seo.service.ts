@@ -74,27 +74,27 @@ export class SeoService {
       },
       {
         name: 'article:modified_time',
-        content: seo.modifiedTime === '' ? '0000-00-00T00:00:00+00:00' : seo.modifiedTime ?? '',
+        content: (seo.modifiedTime || '0000-00-00T00:00:00+00:00') ?? '',
       },
       {
         name: 'og:image',
-        content: seo.og?.image?.path === '' ? '' : seo.og?.image?.path ?? '',
+        content: seo.og?.image?.path ?? '',
       },
       {
         name: 'og:image:width',
-        content: String(seo.og?.image?.width === '' ? 0 : seo.og?.image?.width ?? 0),
+        content: String(seo.og?.image?.width || 0),
       },
       {
         name: 'og:image:height',
-        content: String(seo.og?.image?.height === '' ? 0 : seo.og?.image?.height ?? 0),
+        content: String(seo.og?.image?.height || 0),
       },
       {
         name: 'og:description',
-        content: seo.og?.description === '' ? seo.og?.description : seo.description ?? '',
+        content: (seo.og?.description || seo.description) ?? '',
       },
       {
         name: 'og:title',
-        content: seo.og?.title === '' ? seo.title ?? '' : seo.og?.title ?? '',
+        content: (seo.og?.title || seo.title) ?? '',
       },
       {
         name: 'twitter:card',
@@ -106,11 +106,11 @@ export class SeoService {
       },
       {
         name: 'twitter:title',
-        content: seo.og?.title === '' ? seo.title ?? '' : seo.og?.title ?? '',
+        content: (seo.og?.title || seo.title) ?? '',
       },
       {
         name: 'twitter:description',
-        content: seo.og?.description === '' ? seo.description ?? '' : seo.og?.description ?? '',
+        content: (seo.og?.description || seo.description) ?? '',
       },
     ];
 

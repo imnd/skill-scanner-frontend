@@ -1,1 +1,39 @@
-<p>posts works!</p>
+<div class="container posts-page">
+  <div class="top_h1_text">
+    <h1 class="top-h1">Блог</h1>
+  </div>
+  @if (posts().length > 0) {
+    <ul class="row posts-page__posts-list">
+      @for (post of posts(); track post.id) {
+        <li class="col-12 col-md-6 col-xl-4">
+          <a
+            class="posts-page__list-item-wrapper-link"
+            [href]="`/posts/${post.slug}/`"
+          >
+            <div class="posts-page__list-item">
+              <div
+                class="posts-page__list-item-cover"
+                [style]="{ backgroundImage: 'url(' + post.cover + ')' }"
+              ></div>
+
+              <div class="posts-page__list-item-date-views-block">
+                <div class="posts-page__list-item-date">
+                  {{ dateTimeService.formatDate(post.createdAt || '0000-00-00') }}
+                </div>
+                <div class="posts-page__list-item-views">
+                  {{ post.viewsCount || '' }}
+                </div>
+              </div>
+
+              <div class="posts-page__list-item-title">
+                {{ post.title }}
+              </div>
+
+              <div class="posts-page__list-item-text" [innerHTML]="post.shortText"></div>
+            </div>
+          </a>
+        </li>
+      }
+    </ul>
+  }
+</div>
