@@ -1,5 +1,5 @@
-const baseUrl = 'http://edvisor-backend.com';
-const baseAppUrl = 'http://edvisor-backend.com/';
+const baseUrl = 'http://skill-scanner-backend.com';
+const baseAppUrl = 'http://skill-scanner-backend.com/';
 const apiUrl = baseAppUrl + 'api/v1';
 const redirectUrl = baseAppUrl + 'redirect?link=';
 

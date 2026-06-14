@@ -1,7 +1,7 @@
-<div class="edvisor-selector">
-  <div class="edvisor-selector__title-counter-block" (click)="isItemsShowed = true">
-    <span class="edvisor-selector__title">{{ title }}</span>
-    <span class="edvisor-selector__counter">Выбрано: {{ selectedItemsCount }}</span>
+<div class="skill-scanner-selector">
+  <div class="skill-scanner-selector__title-counter-block" (click)="isItemsShowed = true">
+    <span class="skill-scanner-selector__title">{{ title }}</span>
+    <span class="skill-scanner-selector__counter">Выбрано: {{ selectedItemsCount }}</span>
   </div>
 
   <app-modal
@@ -10,9 +10,9 @@
     [withBackIcon]="true"
     [title]="title"
   >
-    <ul class="edvisor-selector__list">
+    <ul class="skill-scanner-selector__list">
       @for (item of items; track item[itemValuePropName]) {
-      <li class="edvisor-selector__item">
+      <li class="skill-scanner-selector__item">
         @if (modalComponent === 'CheckboxGroup') {
           <app-checkbox-group
             [id]="item[itemValuePropName]"

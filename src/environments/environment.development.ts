@@ -1,5 +1,5 @@
 const baseUrl = 'http://localhost:3000';
-const baseAppUrl = 'http://edvisor-backend/';
+const baseAppUrl = 'http://skill-scanner-backend/';
 const apiUrl = baseAppUrl + 'api/v1';
 const redirectUrl = baseAppUrl + 'redirect?link=';
 

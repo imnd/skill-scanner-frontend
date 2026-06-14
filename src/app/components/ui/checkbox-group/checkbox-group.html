@@ -1,11 +1,11 @@
-<div class="edvisor-checkbox-group">
-  <div class="edvisor-checkbox-group__parent">
+<div class="skill-scanner-checkbox-group">
+  <div class="skill-scanner-checkbox-group__parent">
     <app-checkbox
       [value]="model || []"
       [id]="id"
       [text]="text"
       (valueChange)="parentChangeState([$any($event)])"
-      [class]="'edvisor-checkbox-group__parent-input'"
+      [class]="'skill-scanner-checkbox-group__parent-input'"
     />
 
     <svg
@@ -13,8 +13,8 @@
       height="8"
       viewBox="0 0 12 8"
       [class]="{
-        'edvisor-checkbox-group__parent-icon_active': isToggled,
-        'edvisor-checkbox-group__parent-icon': true,
+        'skill-scanner-checkbox-group__parent-icon_active': isToggled,
+        'skill-scanner-checkbox-group__parent-icon': true,
       }"
       (click)="isToggled = !isToggled"
     >
@@ -23,9 +23,9 @@
     </svg>
   </div>
   @if (isToggled) {
-  <ul class="edvisor-checkbox-group__children-list">
+  <ul class="skill-scanner-checkbox-group__children-list">
     @for (item of items; let itemIndex = $index; track itemIndex;) {
-    <li class="edvisor-checkbox-group__children-list-item">
+    <li class="skill-scanner-checkbox-group__children-list-item">
       <app-checkbox
         [id]="item[itemValuePropName]"
         [text]="item[itemTextPropName]"

@@ -1,4 +1,4 @@
-.edvisor-modal {
+.skill-scanner-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -55,7 +55,7 @@
 }
 
 @media(min-width: 768px) {
-  .edvisor-modal {
+  .skill-scanner-modal {
     &__content {
       margin: 50px;
       height: calc(100% - 200px);
